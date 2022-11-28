@@ -23,22 +23,14 @@ def index_page(request):
 
         dir = os.getcwd()
         full_dir = os.path.join(dir, file_name)
+    
         print(dir)
         print(full_dir)
 
         dest = shutil.move(full_dir, os.path.join(
-            dir, "mainapp\static\sound_file"))
+            dir, "mainapp/static/sound_file"))
 
         data = {"loc" :file_name}
         return render(request,'download.html',data)
 
     return render(request, 'index.html')
-
-
-# from gtts import gTTS
-# tts_en = gTTS('hello', lang='en')
-# tts_fr = gTTS('bonjour', lang='fr')
-# >>>
-# with open('hello_bonjour.mp3', 'wb') as f:
-#     tts_en.write_to_fp(f)
-#     tts_fr.write_to_fp(f)
