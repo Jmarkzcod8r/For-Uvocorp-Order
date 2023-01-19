@@ -310,32 +310,32 @@ def index_page(request):
 
     
     if request.method == "POST":
-        Go()
+        # Go()
 
 
-    #     letters = string.ascii_lowercase
+        letters = string.ascii_lowercase
 
-    #     file_name = f"{''.join(random.choice(letters) for i in range(10))}.mp3"
+        file_name = f"{''.join(random.choice(letters) for i in range(10))}.mp3"
 
-    #     text = request.POST['text']
-    #     tdl = request.POST['tdl']
-    #     lang = request.POST['lang']
+        text = request.POST['text']
+        tdl = request.POST['tdl']
+        lang = request.POST['lang']
 
-    #     tts = gTTS(text, lang=lang, tld=tdl)
-    #     tts.save(file_name)
+        tts = gTTS(text, lang=lang, tld=tdl)
+        tts.save(file_name)
 
-    #     dir = os.getcwd()
-    #     full_dir = os.path.join(dir, file_name)
+        dir = os.getcwd()
+        full_dir = os.path.join(dir, file_name)
     
-    #     print(dir)
-    #     print(full_dir)
+        print(dir)
+        print(full_dir)
 
-    #     dest = shutil.move(full_dir, os.path.join(
-    #         dir, "mainapp/static/sound_file"))
+        dest = shutil.move(full_dir, os.path.join(
+            dir, "mainapp/static/sound_file"))
 
-    #     data = {"loc" :file_name}
+        data = {"loc" :file_name}
 
 
-    #     return render(request,'download.html',data)
+        return render(request,'download.html',data)
 
     return render(request, 'index.html')
